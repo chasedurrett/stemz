@@ -7,7 +7,6 @@
 - A user can create a sample-pack (akin to a playlist) with their favorite samples from across the site. These can be their samples or samples uploaded by other users.
 - A user can view a single sample-pack and see it's contents. 
 - A user can search through all the samples on the site and filter by genre, type, instrument, and bpm.
-- A user can delete samples that they have uploaded. 
 - A user can download sounds.
 
 ## Extra features
@@ -64,4 +63,60 @@
 - Profile.js: Functional. Profile page will display username and the list of samples that user has uploaded. 
 
 ## Endpoints
-- 
+### Auth
+```
+app.post('/auth/register') 
+
+    receives: req.body {
+        username: '',
+        password: ''
+    } 
+    sends: {
+        username: '',
+        password: ''
+    }
+
+app.post('/auth/login')
+
+    receives: req.body {
+        username: '',
+        password: ''
+    }
+    if existing user, sends: {
+        username: '',
+        password: ''
+    }
+
+app.delete('/auth/logout')
+
+    controller: (req, res) => {
+        const {destroy} = req.session
+        destroy()
+        res.sendStatus(200)
+    }
+
+app.put('/auth/user)
+
+    receives: req.body {
+        username: ''
+    } 
+    sends: {
+        const db = req.app.get('db)
+        const {id} req.params
+        const {username} = req.body
+        let data = await db.update_user(id, username)
+        res.status(200).send(data)
+    }
+```
+
+### Samples/Sample-Packs
+```
+app.post('/api/sample')
+
+    
+
+app.post('/api/samplePack')
+
+app.get('/api/samples')
+
+app.get('/api/samplePacks')
