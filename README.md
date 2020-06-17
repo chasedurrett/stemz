@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Stemz
+### Stemz is a web application that offers musicians and music producers a place to share their samples in a clear and free format. This site is intended for users who would like to share and download samples, but don't want to deal with a monthly subscription. Users can create a profile, upload individual sounds, download samples created by other users, and organize their favorite sounds across the site into sample-packs.
 
-## Available Scripts
+## MVP
+- A user can create a profile, log in, and log out. The user profile will display all of the samples that user has uploaded and their created sample-packs.
+- A user can upload individual samples and specify the genre, instrument, bpm, and type (loop or one-shot).
+- A user can create a sample-pack (akin to a playlist) with their favorite samples from across the site. These can be their samples or samples uploaded by other users.
+- A user can view a single sample-pack and see it's contents. 
+- A user can search through all the samples on the site and filter by genre, type, instrument, and bpm.
+- A user can delete samples that they have uploaded. 
+- A user can download sounds.
 
-In the project directory, you can run:
+## Extra features
+- A beat sequencer created with the Web Audio API and Tone.js that gives users a place to be creative and sketch ideas. 
 
-### `npm start`
+## Wireframe
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Components
+- App.js: Functional. Holds routes, Header.js, and Nav.js. 
+- Header.js: Stateful (dropdownSelected: false). Holds logo and the dropdown menu for the link to the user profile page. 
+- Nav.js: Functional. Holds links to samplePackForm.js and uploadSampleForm.js, also links to other views (browse sample-packs & browse samples)
+- samplePackForm.js: Stateful (sample-pack name and img, samples: [], selectedSamples: []). Holds post request and inputs to create a new sample pack, as well as a handleInput() function to update state. Also holds a get request inside of a componentDidMount to get all of the available samples to choose from, then maps over an array of samples including a button to push that sample to the selectedSample array on state. 
+- uploadSampleForm.js: Stateful (name: '', bpm: ''). Hold post request to create a new sample and send it to the DB. Holds inputs and a respective handleInput() function. The rest of the inputs--bpm, instrument, and type--will be selected from dropdown menus. 
+- SamplesDashboard.js: Stateful (samples: []). Will hold a get request in  a componentDidMount to get all of the samples to display and map over the array, returning Sample.js for each iteration. Will pass down info to Sample.js as props and a download function through props.
+- Sample.js: Functional. Will display the sample name, instrument, type, genre, and bpm, and a download button.
+- SamplePackDashboard.js: Stateful (samplePacks: []). Will hold a get request in a componentDidMount to grab all of the samplePacks to display on the front page.
+- SamplePack.js: Functional. will display the sample-pack name and its contents. 
