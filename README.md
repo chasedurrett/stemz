@@ -16,6 +16,10 @@
 - A beat sequencer created with the Web Audio API and Tone.js that gives users a place to be creative and sketch ideas.
 - Sorting sample-packs on the home page by genre.
 
+## Technologies
+
+- react.js, axios.js, express.js, sass, express-fileupload, nodeMailer.js, bcrypt.js, amazon s3, dotenv, massive, tone.js, web audio API. 
+
 ## Wireframe/Views
 
 - Auth.js
@@ -61,7 +65,7 @@
 - Header.js: Stateful (dropdownSelected: false). Holds logo and the dropdown menu for the link to the user profile page.
 - Nav.js: Functional. Holds links to samplePackForm.js and uploadSampleForm.js, also links to other views (browse sample-packs & browse samples)
 - samplePackForm.js: Stateful (sample-pack name and img, samples: [], selectedSamples: []). Holds post request and inputs to create a new sample pack, as well as a handleInput() function to update state. Also holds a get request inside of a componentDidMount to get all of the available samples to choose from, then maps over an array of samples including a button to push that sample to the selectedSample array on state.
-- uploadSampleForm.js: Stateful (name: '', bpm: '', genre: '', instrument: '', type: '', file). Hold post request to create a new sample and send it to the DB. Holds inputs and a respective handleInput() function. The rest of the inputs--bpm, instrument, and type--will be selected from dropdown menus.
+- uploadSampleForm.js: Stateful (name: '', bpm: '', genre: '', instrument: '', type: '', sampleUrl: ''). Hold post request to create a new sample and send it to the DB. Holds inputs and a respective handleInput() function. The rest of the inputs--bpm, instrument, and type--will be selected from dropdown menus.
 - SamplesDashboard.js: Stateful (samples: []). Will hold a get request in a componentDidMount to get all of the samples to display and map over the array, returning Sample.js for each iteration. Will pass down info to Sample.js as props and a download function through props.
 - Sample.js: Functional. Will display the sample name, instrument, type, genre, and bpm, and a download button.
 - SamplePackDashboard.js: Stateful (samplePacks: []). Will hold a get request in a componentDidMount to grab all of the samplePacks to display on the front page.
@@ -105,7 +109,7 @@ app.delete('/auth/logout')
         res.sendStatus(200)
     }
 
-app.put('/auth/user)
+app.put('/auth/user) 
 
     receives: req.body {
         username: ''
@@ -130,7 +134,8 @@ app.post('/api/sample')
         bpm: '',
         genre: '',
         instrument: '',
-        type: ''
+        type: '',
+        sampleUrl: ''
     }
     sends: async (req, res) => {
         const db = app.get('db')
@@ -204,12 +209,12 @@ create table user (
 create table samples (
     id serial primary key,
     name varchar(25),
-    key varchar(2)
+    key varchar(2),
     type_id int references type(id),
     genre_id int references genre(id),
     instrument int references instrument(id),
-    user_id int references user(id)
-
+    user_id int references user(id),
+    sample_pointer text
 )
 create table type (
     id serial primary key,
