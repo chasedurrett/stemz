@@ -238,3 +238,11 @@ create table samplePackContents (
     sample_id int references samples(id)
 )
 ```
+
+## Project Points
+- Core: 35
+- Additional Tech: 30 (other libraries pending)
+- Hosting: 15
+- Presentation: 5
+
+### Total: 85 (pending)
