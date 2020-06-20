@@ -1,0 +1,20 @@
+insert into samples
+    (
+    name,
+    sample_key,
+    type_id,
+    genre_id,
+    instrument,
+    sample_url,
+    sample_author
+    )
+values
+    (
+        $1,
+        $2,
+        $3,
+        $4,
+        $5,
+        $6,
+        $7
+)
