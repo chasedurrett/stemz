@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { userInfoToDux } from "../../dux/reducer";
 import axios from "axios";
 
 class Auth extends Component {
@@ -29,6 +31,8 @@ class Auth extends Component {
     axios
       .post("/auth/register", { username, password, email })
       .then((res) => {
+        const { username, id, email } = res.data;
+        this.props.userInfoToDux(username, id, email);
         this.props.history.push("/sample-pack-dashboard");
       })
       .catch((err) => console.log(err));
@@ -39,6 +43,8 @@ class Auth extends Component {
     axios
       .post("/auth/login", { username, password })
       .then((res) => {
+        const { username, id, email } = res.data;
+        this.props.userInfoToDux(username, id, email);
         this.props.history.push("/sample-pack-dashboard");
       })
       .catch((err) => console.log(err));
@@ -96,4 +102,4 @@ class Auth extends Component {
   }
 }
 
-export default Auth;
+export default connect(null, { userInfoToDux })(Auth);

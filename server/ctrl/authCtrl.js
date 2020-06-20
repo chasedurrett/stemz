@@ -28,8 +28,8 @@ module.exports = {
     req.session.user = existingUser[0];
     res.status(200).send(req.session.user);
   },
-  logoutUser: async (req, res) => {
-    const db = req.app.get("db");
-    req
+  logoutUser: (req, res) => {
+    req.session.destroy();
+    res.sendStatus(200);
   },
 };

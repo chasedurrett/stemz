@@ -1,4 +1,4 @@
-create table user (
+create table users (
     id serial primary key,
     username varchar(30),
     password varchar(30),
@@ -6,13 +6,13 @@ create table user (
 )
 create table samples (
     id serial primary key,
-    name varchar(25),
-    key varchar(2),
+    name varchar(50),
+    sample_key text,
     type_id int references type(id),
     genre_id int references genre(id),
     instrument int references instrument(id),
-    user_id int references user(id),
-    sample_pointer text
+    sample_url text,
+    sample_author int references users(id)
 )
 create table type (
     id serial primary key,

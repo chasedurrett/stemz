@@ -3,10 +3,13 @@ import axios from "axios";
 import { v4 as randomString } from "uuid";
 import Dropzone from "react-dropzone";
 import { GridLoader } from "react-spinners";
+import {connect} from 'react-redux'
+import store from '../../dux/store'
 
 class UploadSampleForm extends Component {
   constructor() {
     super();
+    const reduxState = store.getState()
     this.state = {
       isUploading: false,
       url: "",
@@ -15,7 +18,17 @@ class UploadSampleForm extends Component {
       type: "",
       genre: "",
       instrument: "",
+      id: reduxState.id,
     };
+  }
+
+  componentDidMount(){
+    this.getUserId()
+  }
+
+  getUserId(){
+    const reduxState = store.getState()
+    this.setState({id: reduxState.id})
   }
 
   handleInput(e) {
@@ -79,14 +92,15 @@ class UploadSampleForm extends Component {
   };
 
   createSample() {
-    const { name, key, type, genre, instrument, url } = this.state;
+    const { name, key, type, genre, instrument, url, id } = this.state;
     axios
-      .post("/api/sample", { name, key, type, genre, instrument, url })
+      .post("/api/sample", { name, key, type, genre, instrument, url, id })
       .then((res) => {
         console.log(`Nice it worked!`);
+        this.props.history.push('/samples-dashboard')
       })
       .catch((err) => console.log(err));
-  };
+  }
 
   render() {
     const { isUploading } = this.state;
@@ -166,4 +180,6 @@ class UploadSampleForm extends Component {
   }
 }
 
-export default UploadSampleForm;
+const mapStateToProps = reduxState => reduxState
+
+export default connect(mapStateToProps)(UploadSampleForm);

@@ -31,12 +31,12 @@ app.use(
 app.post('/auth/register', authCtrl.registerUser)
 app.post('/auth/login', authCtrl.loginUser)
 app.put('/auth/user')
-app.delete('/auth/logout')
+app.delete('/auth/logout', authCtrl.logoutUser)
 
 
 
 // SOUND CTRL Endpoints
-app.get('/api/samples')
+app.get('/api/samples', soundCtrl.getSamples)
 app.get('/api/samplepack')
 app.get('/api/samplepack/:samplepackid')
 app.post('/api/sample', soundCtrl.createSample)

@@ -2,7 +2,7 @@ insert into samples
     (
     name,
     sample_key,
-    type_id,
+    sample_type_id,
     genre_id,
     instrument,
     sample_url,
@@ -18,3 +18,4 @@ values
         $6,
         $7
 )
+returning *;

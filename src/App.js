@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 function App(props) {
   return (
     <div className="App">
-      {props.location.pathname === '/' ? <div /> : (<div><Nav/><Header/></div>)}
+      {props.location.pathname === '/' ? <div /> : (<div><Header/><Nav/></div>)}
       {routes}
     </div>
   );
