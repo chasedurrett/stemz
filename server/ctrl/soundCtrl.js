@@ -1,7 +1,8 @@
 module.exports = {
   createSample: async (req, res) => {
     const db = req.app.get("db");
-    const { name, key, type, genre, instrument, url, id } = req.body;
+    const { name, key, type, genre, instrument, url} = req.body;
+    const {id} = req.session.user
     const newSample = await db.create_sample(
       name,
       key,
@@ -27,4 +28,20 @@ module.exports = {
 
     res.status(200).send(samples);
   },
+  getUserSamples: async (req, res) => {
+      const db = req.app.get('db')
+      const {id} = req.session.user
+      const userSamples = await db.get_user_samples(id)
+
+      res.status(200).send(userSamples)
+  },
+  deleteUserSample: async (req, res) => {
+      const db = req.app.get('db')
+      const {id} = req.params
+      const data = await db.delete_user_sample(id)
+      if(!data){
+          return res.status(505).send(`Couldn't delete item, we're fixing that!`)
+      }
+      res.sendStatus(200)
+  }
 };

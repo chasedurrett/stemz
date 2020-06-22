@@ -37,6 +37,7 @@ app.delete('/auth/logout', authCtrl.logoutUser)
 
 // SOUND CTRL Endpoints
 app.get('/api/samples', soundCtrl.getSamples)
+app.get('/api/user-samples', soundCtrl.getUserSamples)
 app.get('/api/samplepack')
 app.get('/api/samplepack/:samplepackid')
 app.post('/api/sample', soundCtrl.createSample)

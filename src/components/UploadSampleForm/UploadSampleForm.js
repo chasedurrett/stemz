@@ -3,13 +3,14 @@ import axios from "axios";
 import { v4 as randomString } from "uuid";
 import Dropzone from "react-dropzone";
 import { GridLoader } from "react-spinners";
-import {connect} from 'react-redux'
-import store from '../../dux/store'
+import { connect } from "react-redux";
+import store from "../../dux/store";
+import { Link } from "react-router-dom";
 
 class UploadSampleForm extends Component {
   constructor() {
     super();
-    const reduxState = store.getState()
+    const reduxState = store.getState();
     this.state = {
       isUploading: false,
       url: "",
@@ -22,13 +23,13 @@ class UploadSampleForm extends Component {
     };
   }
 
-  componentDidMount(){
-    this.getUserId()
+  componentDidMount() {
+    this.getUserId();
   }
 
-  getUserId(){
-    const reduxState = store.getState()
-    this.setState({id: reduxState.id})
+  getUserId() {
+    const reduxState = store.getState();
+    this.setState({ id: reduxState.id });
   }
 
   handleInput(e) {
@@ -92,12 +93,12 @@ class UploadSampleForm extends Component {
   };
 
   createSample() {
-    const { name, key, type, genre, instrument, url, id } = this.state;
+    const { name, key, type, genre, instrument, url} = this.state;
     axios
-      .post("/api/sample", { name, key, type, genre, instrument, url, id })
+      .post("/api/sample", { name, key, type, genre, instrument, url})
       .then((res) => {
         console.log(`Nice it worked!`);
-        this.props.history.push('/samples-dashboard')
+        this.props.history.push("/samples-dashboard");
       })
       .catch((err) => console.log(err));
   }
@@ -174,12 +175,14 @@ class UploadSampleForm extends Component {
             </select>
           </div>
         </div>
-        <button onClick={() => this.createSample()}>Upload</button>
+        <Link to="/samples-dashboard">
+          <button onClick={() => this.createSample()}>Upload</button>
+        </Link>
       </div>
     );
   }
 }
 
-const mapStateToProps = reduxState => reduxState
+const mapStateToProps = (reduxState) => reduxState;
 
 export default connect(mapStateToProps)(UploadSampleForm);

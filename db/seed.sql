@@ -28,7 +28,8 @@ create table genre (
 )
 create table samplePack (
     id serial primary key,
-    name varchar(40)
+    name varchar(40),
+    img text
 )
 create table samplePackContents (
     id serial primary key,

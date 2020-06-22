@@ -1,8 +1,9 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-function Sample(props) {
+function SampleTwo(props) {
   const {
+    id,
     name,
     url,
     sampleType,
@@ -10,6 +11,7 @@ function Sample(props) {
     instrument,
     genre,
     author,
+    addToSamplePack,
   } = props;
 
   return (
@@ -21,16 +23,11 @@ function Sample(props) {
       <h4>{sampleKey}</h4>
       <h4>{sampleType}</h4>
       <h4>{author}</h4>
-      <ReactPlayer
-        controls={true}
-        width={50}
-        height={30}
-        url={url}
-      />
+      <ReactPlayer controls={true} width={50} height={30} url={url} />
       {/*<audio id="audio-element" src={url} controls={true}></audio>*/}
-      <button>Download</button>
+      <button onClick={() => addToSamplePack(id)}>Add to Sample-pack</button>
     </div>
   );
 }
 
-export default Sample;
+export default SampleTwo;
