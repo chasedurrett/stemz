@@ -28,7 +28,7 @@ function Sample(props) {
         url={url}
       />
       {/*<audio id="audio-element" src={url} controls={true}></audio>*/}
-      <button>Download</button>
+      <button><a href={url}>Download</a></button>
     </div>
   );
 }
