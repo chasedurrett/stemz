@@ -1,0 +1,34 @@
+$fontColor: whitesmoke;
+
+.header {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(20, 20, 20);
+  position: fixed;
+  .header-logo,
+  .header-links {
+    width: 50%;
+    height: 70%;
+  }
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .header-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .logout-link,
+  .profile-link,
+  .logo {
+    color: $fontColor;
+    text-decoration: none;
+    margin: auto 18px;
+  }
+}

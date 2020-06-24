@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import "./Sample.css"
 
 function Sample(props) {
   const {
@@ -13,7 +14,7 @@ function Sample(props) {
   } = props;
 
   return (
-    <div>
+    <div className="sample-container">
       sample
       <h4>{name}</h4>
       <h4>{instrument}</h4>

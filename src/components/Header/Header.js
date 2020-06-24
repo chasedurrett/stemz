@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./header.css";
 
 class Header extends Component {
   logoutUser = () => {
@@ -14,13 +15,22 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        Header
-        <Link to="/sample-pack-dashboard">STEMZ</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/" onClick={() => this.logoutUser()}>
-          Logout
-        </Link>
+      <div className="header">
+        <div className="header-logo">
+          <Link className="logo" to="/sample-pack-dashboard">STEMZ</Link>
+        </div>
+        <div className="header-links">
+          <Link className="profile-link" to="/profile">
+            Profile
+          </Link>
+          <Link
+            className="logout-link"
+            to="/"
+            onClick={() => this.logoutUser()}
+          >
+            Logout
+          </Link>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Sample from "../Sample/Sample";
+import "./SamplesDashboard.css";
 
 class SamplesDashboard extends Component {
   constructor() {
@@ -15,9 +16,12 @@ class SamplesDashboard extends Component {
   }
 
   getSamples = () => {
-    axios.get("/api/samples").then((res) => {
-      this.setState({ samples: res.data });
-    });
+    axios
+      .get("/api/samples")
+      .then((res) => {
+        this.setState({ samples: res.data });
+      })
+      .catch((err) => console.log(err));
   };
 
   render() {
@@ -37,7 +41,15 @@ class SamplesDashboard extends Component {
         />
       );
     });
-    return <div>{samples}</div>;
+    return (
+      <div className="samples-dashboard">
+        <div className="carousel-container">
+          <div className="carousel">carousel</div>
+        </div>
+
+        <div className="samples-table">{samples}</div>
+      </div>
+    );
   }
 }
 

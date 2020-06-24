@@ -1,0 +1,9 @@
+@mixin flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+.App {
+  @include flex(column, space-around);
+}
