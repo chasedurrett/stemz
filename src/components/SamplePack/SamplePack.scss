@@ -1,0 +1,74 @@
+@mixin flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+.sample-pack-container {
+  @include flex(column, flex-start);
+  width: 91vw;
+  margin-left: 9vw;
+  height: 94vh;
+  margin-top: 6vh;
+  .sample-pack-header {
+    @include flex(row, space-around);
+    align-items: center;
+    margin-top: 0px;
+    width: 80%;
+    margin: 10px auto;
+    background-color: #222222;
+    border-radius: 6px;
+    height: 25vh;
+    .user-info-container{
+      @include flex(column, center);
+      width: 70%;
+      .username-container, .author-container {
+        width: 60%;
+        color: whitesmoke;
+      }
+      
+    }
+    .sample-pack-img-container{
+      width: 220px;
+      height: 220px;
+      img {
+        margin: auto;
+        width: 220px;
+        border-radius: 4px;
+        height: 220px;
+      }
+    }
+  }
+  .search-carousel{
+    height: 10vh;
+    width: 60%;
+    margin: 0 auto;
+    @include flex(row, space-around);
+    align-items: center;
+    input {
+      height: 1.5vh;
+    }
+  }
+  .samples-table {
+    width: 100%;
+    margin-top: 15px;
+    @include flex(column, center);
+    align-items: center;
+  }
+  .samples-table-header {
+    @include flex(row, center);
+    width: 70%;
+    margin: 0px auto;
+  }
+  .sample-header {
+    height: 5vh;
+    width: 12.5%;
+    border-bottom: solid rgba(128, 128, 128, 0.287) 1px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    font-size: 0.7rem;
+  }
+  .sample {
+    font-size: 0.7rem;
+  }
+}

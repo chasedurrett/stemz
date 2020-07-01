@@ -1,0 +1,45 @@
+.sample-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  height: 5vh;
+  margin: auto;
+}
+
+.sample-container:hover {
+  -webkit-box-shadow: rgba(128, 128, 128, 0.246) 3px 3px 3px;
+          box-shadow: rgba(128, 128, 128, 0.246) 3px 3px 3px;
+}
+
+.sample-container .box {
+  height: 5vh;
+  width: 12.5%;
+  border-bottom: solid rgba(128, 128, 128, 0.287) 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sample-container .box .audioPlayer__play-icon {
+  color: red;
+  background: none;
+}
+
+.sample-container .sample {
+  font-size: 0.7rem;
+}
+/*# sourceMappingURL=SampleTwo.css.map */

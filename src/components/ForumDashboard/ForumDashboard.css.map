@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,0BAA0B,CAAC;EACzB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EAEtB,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,GAAG;EACf,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "ForumDashboard.scss"
+    ],
+    "names": [],
+    "file": "ForumDashboard.css"
+}

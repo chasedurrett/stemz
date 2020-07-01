@@ -6,6 +6,7 @@ import { GridLoader } from "react-spinners";
 import { connect } from "react-redux";
 import store from "../../dux/store";
 import { Link } from "react-router-dom";
+import "./UploadSampleForm.css";
 
 class UploadSampleForm extends Component {
   constructor() {
@@ -93,9 +94,9 @@ class UploadSampleForm extends Component {
   };
 
   createSample() {
-    const { name, key, type, genre, instrument, url} = this.state;
+    const { name, key, type, genre, instrument, url } = this.state;
     axios
-      .post("/api/sample", { name, key, type, genre, instrument, url})
+      .post("/api/sample", { name, key, type, genre, instrument, url })
       .then((res) => {
         console.log(`Nice it worked!`);
         this.props.history.push("/samples-dashboard");
@@ -105,28 +106,30 @@ class UploadSampleForm extends Component {
 
   render() {
     const { isUploading } = this.state;
-    console.log(this.state);
     return (
-      <div>
+      <div className="upload-sample-container">
         <div className="upload-sample-form">
-          <h1>Upload a Sample</h1>
           <Dropzone
+            className="file-loader"
             onDropAccepted={this.getSignedRequest}
             multiple={false}
             accept="audio/*"
           >
             {({ getRootProps, getInputProps }) =>
               isUploading ? (
-                <GridLoader />
+                <div className="file-loader">
+                <GridLoader className="file-loader" />
+                </div>
               ) : (
-                <div {...getRootProps()}>
+                <div className="file-loader" {...getRootProps()}>
                   <input {...getInputProps()} />
-                  Drag & Drop a file or click me!
+                  <h3>Drag & Drop a file or click me!</h3>
+                  <img src="https://img.icons8.com/ios/2x/upload.png" />
                 </div>
               )
             }
           </Dropzone>
-          <div>
+          <div className="upload-inputs">
             <input
               onChange={(e) => this.handleInput(e)}
               name="name"
@@ -173,11 +176,22 @@ class UploadSampleForm extends Component {
               <option value="10">Cinematic</option>
               <option value="11">Global</option>
             </select>
+            <Link  to="/samples-dashboard">
+              <button
+                className="submit-sample-button"
+                onClick={() => this.createSample()}
+              >
+                Upload
+              </button>
+            </Link>
           </div>
         </div>
-        <Link to="/samples-dashboard">
-          <button onClick={() => this.createSample()}>Upload</button>
-        </Link>
+        <div className="disclaimer-container">
+          <p className="disclaimer">
+            Upload an mp3, wav, or other lossless audio file. Do not upload
+            audio files for which you do not have legal permission.
+          </p>
+        </div>
       </div>
     );
   }

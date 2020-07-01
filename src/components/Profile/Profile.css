@@ -1,0 +1,176 @@
+.profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 91vw;
+  margin-left: 9vw;
+  height: 94vh;
+  background-color: #eef0f2;
+  margin-top: 6vh;
+}
+
+.profile-container .profile-header {
+  width: 100%;
+  height: 250px;
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile-container .profile-header .user-info {
+  height: 100%;
+  margin-left: 270px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-container .profile-header .user-info h2 {
+  color: whitesmoke;
+}
+
+.profile-container .profile-nav {
+  width: 70%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto;
+}
+
+.profile-container .profile-nav button {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.657);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  padding-left: 15px;
+  background-color: transparent;
+  padding-bottom: 1px;
+  padding-right: 15px;
+}
+
+.profile-container .profile-nav button:hover {
+  color: black;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.979);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.profile-container .profile-nav button button:focus {
+  background-color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.979);
+}
+
+.profile-container .user-samplepack-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: 10px auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.profile-container .user-samples-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  margin: 10px auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+.profile-container .sample-pack-container {
+  height: 240px;
+  width: 200px;
+  margin: 10px 10px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.205) 4px 4px 7px;
+          box-shadow: rgba(0, 0, 0, 0.205) 4px 4px 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #dfdfdf;
+}
+
+.profile-container .sample-pack-container .img-container {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-container .sample-pack-container .img-container .sample-pack-img {
+  width: 9vw;
+  height: 13vh;
+  border-radius: 4px;
+  margin: auto;
+}
+
+.profile-container .sample-pack-container .sample-pack-name-container {
+  width: 100%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-container .sample-pack-container .sample-pack-name-container .sample-pack-name {
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+  margin: auto;
+}
+
+.profile-container .sample-pack-container .sample-pack-name-container .sample-pack-name:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Profile.css.map */

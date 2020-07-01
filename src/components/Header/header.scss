@@ -1,4 +1,5 @@
 $fontColor: whitesmoke;
+$background: #222222;
 
 .header {
   width: 100%;
@@ -7,7 +8,7 @@ $fontColor: whitesmoke;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(20, 20, 20);
+  background-color: $background;
   position: fixed;
   .header-logo,
   .header-links {
@@ -18,6 +19,11 @@ $fontColor: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    .header-logo-img{
+      width: 1.5vw;
+      height: 2.5vh;
+      margin-left: 20px;
+    }
   }
   .header-links {
     display: flex;
@@ -26,6 +32,7 @@ $fontColor: whitesmoke;
   }
   .logout-link,
   .profile-link,
+  .forum-link,
   .logo {
     color: $fontColor;
     text-decoration: none;

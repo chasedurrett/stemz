@@ -3,30 +3,55 @@
   flex-direction: $direction;
   justify-content: $justify;
 }
-
+$background: #222222;
 .samples-dashboard {
-  @include flex(column);
+  @include flex(column, flex-start);
   width: 91vw;
   margin-left: 9vw;
-  height: 92vh;
+  background-color: #EEF0F2;
+  height: 94vh;
+  overflow-x: hidden;
   margin-top: 6vh;
+
   .carousel-container {
     @include flex(column, center);
     margin-top: 0px;
+    position: relative;
     width: 100%;
     height: 25vh;
-    background-color: green;
     .carousel {
-      width: 90%;
-      height: 25vh;
-      margin: auto;
-      background-color: blue;
+      width: 60%;
+      height: 5vh;
+      margin: 20px auto;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: $background;
+      border: rgba(128, 128, 128, 0.287) solid 1px;
     }
   }
   .samples-table {
     width: 100%;
     margin-top: 15px;
-    height: 100%;
     @include flex(column, center);
+    align-items: center;
+  }
+  .samples-table-header{
+    @include flex(row, center);
+    width: 70%;
+    margin: 0px auto;
+  }
+  .sample-header {
+    height: 5vh;
+    width: 12.5%;
+    border-bottom: solid rgba(128, 128, 128, 0.287) 1px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    font-size: 0.7rem;
+  }
+  .sample {
+    font-size: 0.7rem;
   }
 }

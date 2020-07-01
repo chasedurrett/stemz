@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { userInfoToDux } from "../../dux/reducer";
 import axios from "axios";
+import "./Auth.css";
 
 class Auth extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Auth extends Component {
       .then((res) => {
         const { username, id, email } = res.data;
         this.props.userInfoToDux(username, id, email);
-        this.props.history.push("/sample-pack-dashboard");
+        this.toggleRegistration()
       })
       .catch((err) => console.log(err));
   };
@@ -53,47 +54,67 @@ class Auth extends Component {
   render() {
     const { isRegistering } = this.state;
     return (
-      <div>
-        <h1>FIND YOUR SOUND</h1>
+      <div className="auth-container">
+        <div  className="logo-div">
+        </div>
         <div>
           {isRegistering ? (
-            <div>
+            <div className="register-form">
+              <span className="auth-text">Email</span>
               <input
-                placeholder="Email.."
+                className="auth-input"
                 name="email"
                 onChange={(e) => this.handleInput(e)}
               />
+              <span className="auth-text">Username</span>
               <input
-                placeholder="Username.."
+                className="auth-input"
                 name="username"
                 onChange={(e) => this.handleInput(e)}
               />
+              <span className="auth-text">Password</span>
               <input
+                className="auth-input"
                 type="password"
-                placeholder="Password.."
                 name="password"
                 onChange={(e) => this.handleInput(e)}
               />
-              <button onClick={() => this.toggleRegistration()}>Cancel</button>
-              <button onClick={() => this.registerUser()}>Register</button>
+              <span className="button-container">
+                <button className="auth-button" onClick={() => this.toggleRegistration()}>
+                  Cancel
+                </button>
+                <button className="auth-button" onClick={() => this.registerUser()}>Register</button>
+              </span>
             </div>
           ) : (
-            <div>
+            <div className="login-form">
+              <span className="auth-text">Username</span>
               <input
-                placeholder="Username.."
+                className="auth-input"
                 name="username"
                 onChange={(e) => this.handleInput(e)}
               />
+              <span className="auth-text">Password</span>
               <input
+                className="auth-input"
                 type="password"
-                placeholder="Password.."
                 name="password"
                 onChange={(e) => this.handleInput(e)}
               />
-              <button onClick={() => this.loginUser()}>Login</button>
-              <button onClick={() => this.toggleRegistration()}>
-                Register
-              </button>
+              <span className="button-container">
+                <button
+                  className="auth-button"
+                  onClick={() => this.loginUser()}
+                >
+                  Login
+                </button>
+                <button
+                  className="auth-button"
+                  onClick={() => this.toggleRegistration()}
+                >
+                  Register
+                </button>
+              </span>
             </div>
           )}
         </div>

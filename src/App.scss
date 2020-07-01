@@ -6,4 +6,8 @@
 
 .App {
   @include flex(column, space-around);
+  background-color: #EEF0F2;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }

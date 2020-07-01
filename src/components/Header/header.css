@@ -13,7 +13,7 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #141414;
+  background-color: #222222;
   position: fixed;
 }
 
@@ -35,6 +35,12 @@
           justify-content: flex-start;
 }
 
+.header .header-logo .header-logo-img {
+  width: 1.5vw;
+  height: 2.5vh;
+  margin-left: 20px;
+}
+
 .header .header-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,6 +55,7 @@
 
 .header .logout-link,
 .header .profile-link,
+.header .forum-link,
 .header .logo {
   color: whitesmoke;
   text-decoration: none;

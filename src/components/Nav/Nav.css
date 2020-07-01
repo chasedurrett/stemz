@@ -14,14 +14,39 @@
   top: 6vh;
   text-align: left;
   position: fixed;
-  background-color: #dbdbdb;
+  background-color: #c0c2c3;
+}
+
+.Nav .first-link {
+  margin-top: 150px;
+}
+
+.Nav .button {
+  background: none;
+  border: none;
+  color: #5d5d5d;
+  width: 75%;
+  text-align: left;
+  margin: 10px;
+}
+
+.Nav .button h3 {
+  text-align: left;
+  font-size: 0.65rem;
+  margin-left: 3px;
+}
+
+.Nav .button:hover {
+  cursor: pointer;
+  color: black;
 }
 
 .Nav .link {
   color: #5d5d5d;
   text-decoration: none;
   text-align: left;
-  margin: 15px auto;
+  margin: 10px auto;
+  width: 75%;
 }
 
 .Nav .link:hover {
@@ -30,7 +55,7 @@
 }
 
 .Nav .link h3 {
-  text-align: start;
-  font-size: 0.8rem;
+  text-align: left;
+  font-size: 0.65rem;
 }
 /*# sourceMappingURL=Nav.css.map */

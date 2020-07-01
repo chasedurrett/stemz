@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,OAAkB;EACpC,WAAW,EAAE,KAAK;CACnB",
+    "sources": [
+        "samplePackToolTip.scss"
+    ],
+    "names": [],
+    "file": "samplePackToolTip.css"
+}

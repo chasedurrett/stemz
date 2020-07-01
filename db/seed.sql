@@ -29,10 +29,18 @@ create table genre (
 create table samplePack (
     id serial primary key,
     name varchar(40),
-    img text
+    img text,
+    author int references users(id)
 )
 create table samplePackContents (
     id serial primary key,
     sample_pack_id int references samplePack(id),
     sample_id int references samples(id)
+)
+create table posts (
+id serial primary key,
+title varchar(45),
+img text,
+content text,
+author_id integer references users(id)
 )
