@@ -1,7 +1,18 @@
 .tooltip-body {
-  height: 150px;
+  height: 250px;
   width: 150px;
-  background-color: #a5a5a5;
-  margin-left: 100px;
+  background-color: #d1d1d1;
+  margin-left: 130px;
+}
+
+.tooltip-body h3 {
+  color: rgba(0, 0, 0, 0.541);
+  text-align: left;
+  margin: 9px 0 4px 5px;
+  z-index: 4;
+}
+
+.tooltip-body h3:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=samplePackToolTip.css.map */

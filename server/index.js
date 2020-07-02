@@ -48,6 +48,8 @@ app.put("/api/addToSamplePack", soundCtrl.addToSamplePack);
 app.post('/api/newpost', forumCtrl.createPost)
 app.get('/api/getposts', forumCtrl.getPosts)
 app.get('/api/post/:postid', forumCtrl.getPost)
+app.put('/api/editpost/:postid', forumCtrl.editPost)
+app.delete('/api/delete/:postid', forumCtrl.deletePost)
 
 
 // Endpoint for uploading audio files //

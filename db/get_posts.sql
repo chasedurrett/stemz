@@ -4,4 +4,4 @@ select
     u.username
 from posts p
     join users u on p.author_id = u.id
-order by id DESC
+order by p.id DESC

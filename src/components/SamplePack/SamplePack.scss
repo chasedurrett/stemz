@@ -8,6 +8,7 @@
   width: 91vw;
   margin-left: 9vw;
   height: 94vh;
+  background-color: white;
   margin-top: 6vh;
   .sample-pack-header {
     @include flex(row, space-around);

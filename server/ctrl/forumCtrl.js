@@ -19,4 +19,20 @@ module.exports = {
 
     res.status(200).send(post);
   },
+  editPost: async (req, res) => {
+    const db = req.app.get("db");
+    const { postid } = req.params;
+    const { title, content } = req.body;
+    const post = await db.edit_post(title, content, postid);
+    res.status(200).send(post);
+  },
+  deletePost: async (req, res) => {
+    const db = req.app.get("db");
+    const { postid } = req.params;
+    const deletePost = await db.delete_post(postid);
+
+    if (deletePost) {
+      res.sendStatus(200);
+    }
+  },
 };

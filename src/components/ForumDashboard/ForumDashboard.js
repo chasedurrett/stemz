@@ -26,6 +26,8 @@ class ForumDashboard extends Component {
       .catch((err) => console.log(err));
   }
 
+  
+
   render() {
     const posts = this.state.posts.map((e) => {
       return (
