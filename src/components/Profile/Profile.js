@@ -93,7 +93,6 @@ class Profile extends Component {
       </div>
     ));
     const { username, email } = this.state;
-    console.log(this.state.toggleView);
     return (
       <div className="profile-container">
         <div className="profile-header">
