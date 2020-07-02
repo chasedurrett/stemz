@@ -52,7 +52,7 @@ class Post extends Component {
       .put(`/api/editpost/${postid}`, { title, content })
       .catch((err) => console.log(err));
     this.getPost();
-    this.toggleEdit()
+    this.toggleEdit();
   }
 
   deletePost(id) {
@@ -71,7 +71,9 @@ class Post extends Component {
     const dataMap = this.state.post.map((e) => {
       return (
         <div className="post-body" key={e.id}>
-          <h3>{e.username}</h3>
+          <div className="post-author">
+            <h3>by: {e.username}</h3>
+          </div>
           <div className="post-title">
             {editing ? (
               <input
@@ -94,6 +96,7 @@ class Post extends Component {
               <p>{e.content}</p>
             )}
           </div>
+          <div className="user-buttons">
           {id === e.author_id ? (
             <input
               type="button"
@@ -123,6 +126,7 @@ class Post extends Component {
               />
             )
           ) : null}
+          </div>
         </div>
       );
     });

@@ -78,7 +78,27 @@ class SamplePackDashboard extends Component {
     const recentFilter = recents.sort(function (a, b) {
       return b - a;
     });
-
+    const lofi = samplePacks
+      .sort(function (a, b) {
+        return b - a;
+      })
+      .map((e) => (
+        <div className="sample-pack-backdrop" key={e.id}>
+          <div className="sample-pack-container">
+            <div className="img-container">
+              <img className="sample-pack-img" alt="sample pack" src={e.img} />
+            </div>
+            <div className="sample-pack-name-container">
+              <Link
+                className="sample-pack-name"
+                to={{ pathname: `/samplepack/${e.id}` }}
+              >
+                <h2 className="sample-pack-name">{e.name}</h2>
+              </Link>
+            </div>
+          </div>
+        </div>
+      ));
     return (
       <div className="sample-pack-dashboard">
         <div className="carousel-container">
@@ -98,15 +118,13 @@ class SamplePackDashboard extends Component {
           <div className="sample-pack-carousel-two">
             <h3 className="row-title">Lofi</h3>
             <p>Lofi sounds to warm up your production</p>
-            <Slider {...settings}>{samplePacksDisplay}</Slider>
-          </div>
-          <div className="sample-pack-carousel-two">
-            <h3 className="row-title">Chill/Downtempo</h3>
-            <p>Slow sounds to create ambience</p>
-            <Slider {...settings}>{samplePacksDisplay}</Slider>
+            <Slider {...settings}>{lofi}</Slider>
           </div>
         </div>
-
+        <div className="slogan-container">
+        <img style={{height: 60}} alt="find your sound" src="https://img.icons8.com/nolan/2x/audio-wave.png"/>
+        <h2 className="slogan">Find your sound</h2>
+        </div>
         <div className="right-sidebar">
           <h3 className="row-title recent-packs-title">Recent Packs</h3>
           <div className="recent-packs-list">{recentFilter}</div>

@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .sample-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 70%;
+  font-family: 'Roboto', sans-serif;
   height: 5vh;
+  &:nth-child(even){
+    background-color: rgba(233, 233, 233, 0.363);
+  }
   &:hover {
     box-shadow: rgba(128, 128, 128, 0.246) 3px 3px 3px;
   }
@@ -21,10 +27,12 @@
   }
   .sample {
     font-size: 0.7rem;
+    font-family: 'Roboto', sans-serif;
   }
   .button {
     background: none;
     border: none;
+    font-family: 'Roboto', sans-serif;
     &:hover{
         cursor: pointer;
     }

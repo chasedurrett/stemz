@@ -17,7 +17,7 @@ export default class Carousel extends React.Component {
         naturalSlideHeight={215}
         isPlaying={true}
         totalSlides={3}
-        interval={6000}
+        interval={5000}
       >
         <Slider>
           <Slide index={0}>

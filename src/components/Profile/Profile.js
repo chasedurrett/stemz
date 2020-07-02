@@ -98,14 +98,13 @@ class Profile extends Component {
       <div className="profile-container">
         <div className="profile-header">
           <div className="user-info">
-            <h2>{username}</h2>
-            <h2>{email}</h2>
+            {/*<h2>{username}</h2>*/}
           </div>
         </div>
         <div className="profile-nav">
-          <button onClick={() => this.viewSamples()}>User samples</button>
+          <button onClick={() => this.viewSamples()}>{username}'s samples</button>
           <button onClick={() => this.viewSamplePacks()}>
-            User samplepacks
+            {username}'s samplepacks
           </button>
         </div>
         <div className="user-content-container">

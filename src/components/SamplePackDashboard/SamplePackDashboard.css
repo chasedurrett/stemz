@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap");
 .sample-pack-dashboard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,6 +20,13 @@
   background-color: white;
 }
 
+@media (max-width: 415px) {
+  .sample-pack-dashboard {
+    width: 100vw;
+    margin: auto;
+  }
+}
+
 .sample-pack-dashboard .carousel-container {
   width: 100%;
   height: 22vh;
@@ -32,6 +41,12 @@
           align-items: center;
 }
 
+@media (max-width: 415px) {
+  .sample-pack-dashboard .carousel-container {
+    width: 100%;
+  }
+}
+
 .sample-pack-dashboard .carousel-container .carousel {
   width: 65%;
   background-color: gray;
@@ -43,6 +58,13 @@
   border-bottom-right-radius: 18px;
 }
 
+@media (max-width: 415px) {
+  .sample-pack-dashboard .carousel-container .carousel {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 .sample-pack-dashboard .sample-pack-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,14 +74,21 @@
           justify-content: space-evenly;
   margin-top: 30px;
   background-color: rgba(36, 36, 36, 0.376);
-  height: 6px;
+  height: 2px;
   border-radius: 4px;
   margin: 20px auto;
   width: 65%;
 }
 
+@media (max-width: 415px) {
+  .sample-pack-dashboard .sample-pack-nav {
+    display: none;
+  }
+}
+
 .sample-pack-dashboard .sample-pack-nav .row-title {
   font-size: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .sample-pack-dashboard .content-display {
@@ -79,6 +108,13 @@
   width: 50%;
 }
 
+@media (max-width: 415px) {
+  .sample-pack-dashboard .content-display {
+    width: 100%;
+    display: none;
+  }
+}
+
 .sample-pack-dashboard .content-display .sample-pack-carousel {
   width: 85%;
   height: 300px;
@@ -91,6 +127,7 @@
   width: 170px;
   margin: 10px 1px;
   border-radius: 3px;
+  font-family: "Roboto", sans-serif;
   -webkit-box-shadow: rgba(0, 0, 0, 0.075) 4px 4px 7px;
           box-shadow: rgba(0, 0, 0, 0.075) 4px 4px 7px;
   display: -webkit-box;
@@ -148,6 +185,7 @@
 
 .sample-pack-dashboard .content-display .sample-pack-carousel .sample-pack-backdrop .sample-pack-container .sample-pack-name-container .sample-pack-name {
   font-size: 1rem;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.554);
   margin: auto;
@@ -166,7 +204,8 @@
   margin: 60px auto;
 }
 
-.sample-pack-dashboard .content-display .sample-pack-carousel-two h3, .sample-pack-dashboard .content-display .sample-pack-carousel-two p {
+.sample-pack-dashboard .content-display .sample-pack-carousel-two h3,
+.sample-pack-dashboard .content-display .sample-pack-carousel-two p {
   margin: 4px auto;
 }
 
@@ -221,6 +260,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Roboto", sans-serif;
   margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -233,6 +273,7 @@
 .sample-pack-dashboard .content-display .sample-pack-carousel-two .sample-pack-backdrop .sample-pack-container .sample-pack-name-container .sample-pack-name {
   font-size: 1rem;
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
   color: rgba(0, 0, 0, 0.554);
   margin: auto;
 }
@@ -243,13 +284,46 @@
           text-decoration: underline rgba(0, 0, 0, 0.137);
 }
 
+.sample-pack-dashboard .slogan-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sample-pack-dashboard .slogan-container .slogan {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  margin-left: 7px;
+}
+
 .sample-pack-dashboard .right-sidebar {
   width: 30%;
+}
+
+@media (max-width: 415px) {
+  .sample-pack-dashboard .right-sidebar {
+    width: 100%;
+  }
 }
 
 .sample-pack-dashboard .right-sidebar .recent-packs-title {
   width: 40%;
   margin-left: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 415px) {
+  .sample-pack-dashboard .right-sidebar .recent-packs-title {
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .sample-pack-dashboard .right-sidebar .recent-packs-list {
@@ -270,14 +344,23 @@
   margin: 0 300px 0 40px;
 }
 
+@media (max-width: 415px) {
+  .sample-pack-dashboard .right-sidebar .recent-packs-list {
+    width: 80%;
+    height: 40vh;
+    margin: auto;
+  }
+}
+
 .sample-pack-dashboard .right-sidebar .recent-packs-list .list-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Roboto", sans-serif;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.061) 4px 4px 6px;
-          box-shadow: rgba(0, 0, 0, 0.061) 4px 4px 6px;
-  height: 75px;
+  -webkit-box-shadow: rgba(114, 114, 114, 0.061) 4px 4px 6px;
+          box-shadow: rgba(114, 114, 114, 0.061) 4px 4px 6px;
+  height: 80px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -314,12 +397,14 @@
 
 .sample-pack-dashboard .right-sidebar .recent-packs-list .list-container h3 {
   font-size: 0.7rem;
-  width: 50%;
+  width: 60%;
+  font-family: "Roboto", sans-serif;
 }
 
 .sample-pack-dashboard .right-sidebar .recent-packs-list .list-container h4 {
   font-size: 0.5rem;
   width: 50%;
+  font-family: "Roboto", sans-serif;
 }
 
 .sample-pack-dashboard .right-sidebar .recent-packs-list .list-container .recents-img-container {

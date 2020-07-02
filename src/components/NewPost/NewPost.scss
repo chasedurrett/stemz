@@ -5,24 +5,39 @@
   margin-left: 9vw;
   height: 94vh;
   margin-top: 6vh;
-  background-color: #eef0f2;
-  .form-body{
-      width: 60vw;
-      margin: auto;
-      background-color: rgb(0, 0, 0);
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      input, textarea {
-          width: 40vw;
+  background-color: white;
+  .form-body {
+    width: 60vw;
+    margin: auto;
+    background-color: rgba(233, 233, 233, 0.363);
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    input,
+    textarea {
+      width: 40vw;
+    }
+    input {
+      height: 3vh;
+      border: 1px solid rgba(75, 75, 75, 0.281);
+    }
+    textarea {
+      height: 30vh;
+      border-radius: 4px;
+      border: 1px solid rgba(75, 75, 75, 0.281);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    button {
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px rgba(71, 71, 71, 0.123);
+      &:hover {
+        cursor: pointer;
+        box-shadow: inset 3px 3px 3px rgba(71, 71, 71, 0.452);
       }
-      input{
-          height: 2vh;
-      }
-      textarea{
-          height: 30vh;
-      }
+    }
   }
 }

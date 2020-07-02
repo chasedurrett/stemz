@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import "./NewPost.css"
+import "./NewPost.css";
 
 export default class NewPost extends Component {
   constructor() {
@@ -30,10 +30,24 @@ export default class NewPost extends Component {
   render() {
     return (
       <div className="form-container">
-          <div className="form-body">
-        <input placeholder="Post title.." name="title" onChange={(e) => this.handleInput(e)} />
-        <textarea placeholder="Write about something here.." name="content" onChange={(e) => this.handleInput(e)} />
-        <button onClick={() => this.createPost()}>Submit</button>
+        <div className="form-body">
+          <input
+            style={{ height: 30, borderRadius: 4, fontSize: 15 }}
+            placeholder="Post title.."
+            name="title"
+            onChange={(e) => this.handleInput(e)}
+          />
+          <textarea
+            placeholder="Write about something here.."
+            name="content"
+            onChange={(e) => this.handleInput(e)}
+          />
+          <button
+            style={{ height: 35, width: 100, fontSize: 15 }}
+            onClick={() => this.createPost()}
+          >
+            Submit
+          </button>
         </div>
       </div>
     );

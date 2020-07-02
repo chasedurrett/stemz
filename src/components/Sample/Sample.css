@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .sample-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,7 +14,12 @@
       -ms-flex-align: center;
           align-items: center;
   width: 70%;
+  font-family: 'Roboto', sans-serif;
   height: 5vh;
+}
+
+.sample-container:nth-child(even) {
+  background-color: rgba(233, 233, 233, 0.363);
 }
 
 .sample-container:hover {
@@ -40,11 +46,13 @@
 
 .sample-container .sample {
   font-size: 0.7rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sample-container .button {
   background: none;
   border: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sample-container .button:hover {
