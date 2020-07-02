@@ -324,6 +324,12 @@
   margin-top: 40px;
 }
 
+@media (min-width: 415px) {
+  .sample-pack-dashboard .footer {
+    display: none;
+  }
+}
+
 .sample-pack-dashboard .right-sidebar {
   width: 30%;
 }

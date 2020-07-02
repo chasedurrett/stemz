@@ -209,6 +209,9 @@ $mobile-width: 415px;
     }
   }
   .footer {
+    @include mobileMin(){
+      display: none;
+    }
     background-color: rgb(179, 179, 179);
     width: 100%;
     height: 6vh;
