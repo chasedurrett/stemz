@@ -35,7 +35,6 @@ class SamplePackFormStepOne extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="step-one-container">
         <div className="step-one-form">
