@@ -1,10 +1,39 @@
 .forum-dashboard-container {
   display: flex;
   flex-direction: column;
-
   width: 91vw;
   margin-left: 9vw;
   height: 94vh;
   margin-top: 6vh;
   background-color: white;
+  .post-card {
+    width: 50%;
+    height: 47px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:nth-child(even) {
+      background-color: rgba(233, 233, 233, 0.363);
+    }
+    .post-info-container{
+        height: 40px;
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        .title{
+            text-decoration: none;
+            color: black;
+            font-size: .7rem;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        .posts-table{
+            width: 8;
+        }
+    }
+  }
 }

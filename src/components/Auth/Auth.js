@@ -48,7 +48,7 @@ class Auth extends Component {
         this.props.userInfoToDux(username, id, email);
         this.props.history.push("/sample-pack-dashboard");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(`Username or password was incorrect`));
   };
 
   render() {

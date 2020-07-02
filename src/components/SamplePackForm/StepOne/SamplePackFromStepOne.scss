@@ -8,6 +8,7 @@
   @include flex(column, center);
   width: 91vw;
   margin-left: 9vw;
+  z-index: 10;
   height: 94vh;
   margin-top: 6vh;
   background-color: rgba(0, 0, 0, 0.671);

@@ -27,6 +27,8 @@ app.use(
   })
 );
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 // AUTH Endpoints //
 app.post("/auth/register", authCtrl.registerUser);
 app.post("/auth/login", authCtrl.loginUser);

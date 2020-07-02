@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./SamplePackDashboard.css";
 import axios from "axios";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousel/Carousel";
 import Slider from "react-slick";
@@ -30,33 +30,30 @@ class SamplePackDashboard extends Component {
   render() {
     const settings = {
       infinite: true,
-      speed: 500,
+      speed: 300,
       slidesToShow: 4,
       arrows: true,
       slidesToScroll: 1,
       className: "slides",
-      autoplay: true,
-      autoplaySpeed: 8000,
-      pauseOnHover: true,
       cssEase: "linear",
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
+      prevArrow: <SamplePrevArrow />,
     };
     const { samplePacks } = this.state;
     const samplePacksDisplay = samplePacks.map((e) => (
       <div className="sample-pack-backdrop" key={e.id}>
         <div className="sample-pack-container">
-        <div className="img-container">
-          <img className="sample-pack-img" alt="sample pack" src={e.img} />
-        </div>
-        <div className="sample-pack-name-container">
-          <Link
-            className="sample-pack-name"
-            to={{ pathname: `/samplepack/${e.id}` }}
-          >
-            <h2 className="sample-pack-name">{e.name}</h2>
-          </Link>
-        </div>
+          <div className="img-container">
+            <img className="sample-pack-img" alt="sample pack" src={e.img} />
+          </div>
+          <div className="sample-pack-name-container">
+            <Link
+              className="sample-pack-name"
+              to={{ pathname: `/samplepack/${e.id}` }}
+            >
+              <h2 className="sample-pack-name">{e.name}</h2>
+            </Link>
+          </div>
         </div>
       </div>
     ));
@@ -81,6 +78,7 @@ class SamplePackDashboard extends Component {
     const recentFilter = recents.sort(function (a, b) {
       return b - a;
     });
+
     return (
       <div className="sample-pack-dashboard">
         <div className="carousel-container">
@@ -91,29 +89,34 @@ class SamplePackDashboard extends Component {
             <Carousel />
           </div>
         </div>
-        <div className="sample-pack-nav">
-          <h3 className="row-title">All Packs</h3>
-          <h3 className="row-title">Recent Packs</h3>
-        </div>
+        <div className="sample-pack-nav"></div>
         <div className="content-display">
-        <div className="sample-pack-carousel">
-          <Slider {...settings}>
-            {samplePacksDisplay}
-          </Slider>
+          <div className="sample-pack-carousel">
+            <h3 className="row-title">All Packs</h3>
+            <Slider {...settings}>{samplePacksDisplay}</Slider>
+          </div>
+          <div className="sample-pack-carousel-two">
+            <h3 className="row-title">Lofi</h3>
+            <p>Lofi sounds to warm up your production</p>
+            <Slider {...settings}>{samplePacksDisplay}</Slider>
+          </div>
+          <div className="sample-pack-carousel-two">
+            <h3 className="row-title">Chill/Downtempo</h3>
+            <p>Slow sounds to create ambience</p>
+            <Slider {...settings}>{samplePacksDisplay}</Slider>
+          </div>
         </div>
-          {/*<div className="sample-pack-display">{samplePacksDisplay}</div>*/}
+
+        <div className="right-sidebar">
+          <h3 className="row-title recent-packs-title">Recent Packs</h3>
           <div className="recent-packs-list">{recentFilter}</div>
-        
         </div>
-        
       </div>
     );
   }
 }
 
 export default SamplePackDashboard;
-
-
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
