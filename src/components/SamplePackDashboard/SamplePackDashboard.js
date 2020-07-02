@@ -122,13 +122,35 @@ class SamplePackDashboard extends Component {
           </div>
         </div>
         <div className="slogan-container">
-        <img style={{height: 60}} alt="find your sound" src="https://img.icons8.com/nolan/2x/audio-wave.png"/>
-        <h2 className="slogan">Find your sound</h2>
+          <img
+            style={{ height: 60 }}
+            alt="find your sound"
+            src="https://img.icons8.com/nolan/2x/audio-wave.png"
+          />
+          <h2 className="slogan">Find your sound</h2>
         </div>
         <div className="right-sidebar">
           <h3 className="row-title recent-packs-title">Recent Packs</h3>
           <div className="recent-packs-list">{recentFilter}</div>
         </div>
+        <footer className="footer">
+          <img
+            style={{ height: 20, width: 20 }}
+            src="https://img.icons8.com/metro/2x/instagram-new.png"
+          />
+          <img
+            style={{ height: 20, width: 20 }}
+            src="https://img.icons8.com/ios/2x/twitter.png"
+          />
+          <img
+            style={{ height: 20, width: 20 }}
+            src="https://img.icons8.com/ios/2x/facebook-circled.png"
+          />
+          <img
+            style={{ height: 20, width: 20 }}
+            src="https://img.icons8.com/ios/2x/linkedin.png"
+          />
+        </footer>
       </div>
     );
   }

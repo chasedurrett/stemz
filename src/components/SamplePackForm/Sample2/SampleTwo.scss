@@ -1,4 +1,19 @@
+$mobile-width: 415px;
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+@mixin mobileMin {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
 .sample-container {
+  @include mobile(){
+    display: none;
+  }
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -8,6 +23,23 @@
   margin: auto;
   &:hover {
     box-shadow: rgba(128, 128, 128, 0.246) 3px 3px 3px;
+  }
+  .play-button{
+    @include mobile(){
+      width: 409px;
+    }
+  }
+
+  .instrument, .genre, .sample-key-box, .sample-key, .sample-type, .sampletypebox,
+  .author-box, .download-box, .more-box {
+    @include mobile(){
+      display: none;
+    }
+  }
+  .instrumentbox .instrument{
+    @include mobile(){
+      display: none;
+    }
   }
   .box {
     height: 5vh;

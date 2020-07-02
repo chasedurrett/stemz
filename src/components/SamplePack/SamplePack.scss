@@ -3,7 +3,24 @@
   flex-direction: $direction;
   justify-content: $justify;
 }
+$mobile-width: 415px;
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+@mixin mobileMin {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
 .sample-pack-container {
+  @include mobile(){
+    width: 100vw;
+    height: 94vh;
+    margin: auto;
+  }
   @include flex(column, flex-start);
   width: 91vw;
   margin-left: 9vw;
@@ -11,6 +28,13 @@
   background-color: white;
   margin-top: 6vh;
   .sample-pack-header {
+    @include mobile(){
+      width: 100%;
+      border-radius: 0;
+      height: 15vh;
+      background-color: rgba(58, 58, 58, 0.849);
+      margin-top: 6vh;
+    }
     @include flex(row, space-around);
     align-items: center;
     margin-top: 0px;
@@ -19,19 +43,39 @@
     background-color: #222222;
     border-radius: 6px;
     height: 25vh;
-    .user-info-container{
+    .user-info-container {
       @include flex(column, center);
       width: 70%;
-      .username-container, .author-container {
+      .username-container,
+      .author-container {
+        @include mobile(){
+          width: 70%;
+          height: 30px;
+          margin: auto 20px auto 0;
+        }
         width: 60%;
         color: whitesmoke;
       }
-      
+      h1, h3 {
+        @include mobile(){
+          font-size: 12px;
+        }
+      }
     }
-    .sample-pack-img-container{
+    .sample-pack-img-container {
+      @include mobile(){
+        width: 70px;
+        height: 70px;
+        margin: auto;
+      }
       width: 220px;
       height: 220px;
       img {
+        @include mobile(){
+          width: 70px;
+          height: 70px;
+          margin: auto;
+        }
         margin: auto;
         width: 220px;
         border-radius: 4px;
@@ -39,7 +83,10 @@
       }
     }
   }
-  .search-carousel{
+  .search-carousel {
+    @include mobile(){
+      display: none;
+    }
     height: 10vh;
     width: 60%;
     margin: 0 auto;
@@ -50,12 +97,19 @@
     }
   }
   .samples-table {
+    @include mobile(){
+      width: 100%;
+      height: 100%;
+    }
     width: 100%;
     margin-top: 15px;
     @include flex(column, center);
     align-items: center;
   }
   .samples-table-header {
+    @include mobile(){
+      display: none;
+    }
     @include flex(row, center);
     width: 70%;
     margin: 0px auto;

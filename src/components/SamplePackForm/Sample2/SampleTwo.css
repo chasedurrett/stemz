@@ -17,9 +17,34 @@
   margin: auto;
 }
 
+@media (max-width: 415px) {
+  .sample-container {
+    display: none;
+  }
+}
+
 .sample-container:hover {
   -webkit-box-shadow: rgba(128, 128, 128, 0.246) 3px 3px 3px;
           box-shadow: rgba(128, 128, 128, 0.246) 3px 3px 3px;
+}
+
+@media (max-width: 415px) {
+  .sample-container .play-button {
+    width: 409px;
+  }
+}
+
+@media (max-width: 415px) {
+  .sample-container .instrument, .sample-container .genre, .sample-container .sample-key-box, .sample-container .sample-key, .sample-container .sample-type, .sample-container .sampletypebox,
+  .sample-container .author-box, .sample-container .download-box, .sample-container .more-box {
+    display: none;
+  }
+}
+
+@media (max-width: 415px) {
+  .sample-container .instrumentbox .instrument {
+    display: none;
+  }
 }
 
 .sample-container .box {

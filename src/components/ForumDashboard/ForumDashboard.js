@@ -46,7 +46,7 @@ class ForumDashboard extends Component {
               <Link className="title" to={{ pathname: `/post/${e.id}` }}>
                 <h2>{e.title}</h2>
               </Link>
-              <h3>{e.username}</h3>
+              <h3 className="username-post">{e.username}</h3>
             </div>
           </div>
         );
@@ -81,7 +81,7 @@ class ForumDashboard extends Component {
           </div>
         </div>
         <div className="posts-table">
-          <h3>Start a thread or ask a question!</h3>
+          <h3 className="thread-title">Start a thread or ask a question!</h3>
           {posts}
         </div>
         <div className="posts-sidebar">

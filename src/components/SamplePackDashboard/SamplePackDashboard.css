@@ -288,6 +288,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 20px;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -297,9 +298,30 @@
           align-items: center;
 }
 
+@media (min-width: 415px) {
+  .sample-pack-dashboard .slogan-container {
+    display: none;
+  }
+}
+
 .sample-pack-dashboard .slogan-container .slogan {
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: "Montserrat Subrayada", sans-serif;
   margin-left: 7px;
+}
+
+.sample-pack-dashboard .footer {
+  background-color: #b3b3b3;
+  width: 100%;
+  height: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
 }
 
 .sample-pack-dashboard .right-sidebar {
@@ -347,7 +369,7 @@
 @media (max-width: 415px) {
   .sample-pack-dashboard .right-sidebar .recent-packs-list {
     width: 80%;
-    height: 40vh;
+    height: 250px;
     margin: auto;
   }
 }
@@ -370,6 +392,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 415px) {
+  .sample-pack-dashboard .right-sidebar .recent-packs-list .list-container {
+    height: 199px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .sample-pack-dashboard .right-sidebar .recent-packs-list .list-container:nth-child(even) {
