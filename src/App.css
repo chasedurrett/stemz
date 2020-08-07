@@ -14,5 +14,6 @@
   height: 100%;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  min-width: 890px;
 }
 /*# sourceMappingURL=App.css.map */

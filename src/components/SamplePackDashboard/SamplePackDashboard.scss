@@ -17,6 +17,11 @@ $mobile-width: 415px;
     @content;
   }
 }
+@mixin break2 {
+  @media (max-width: 1518px){
+    @content
+  }
+}
 
 .sample-pack-dashboard {
   @include mobile() {
@@ -25,10 +30,11 @@ $mobile-width: 415px;
   }
   @include flex(row, center);
   width: 91vw;
-  margin-left: 9vw;
+  margin-left: 120px;
   height: 94vh;
   flex-wrap: wrap;
   margin-top: 6vh;
+  min-width: 700px;
   background-color: white;
   .carousel-container {
     @include mobile() {
@@ -82,21 +88,27 @@ $mobile-width: 415px;
     flex-direction: column;
     margin-left: 180px;
     width: 50%;
+    @include break2(){
+      margin-left: 0;
+      width: 800px;
+    }
     .sample-pack-carousel {
-      width: 85%;
+      width: 700px;
       height: 300px;
       margin: 0 auto;
       z-index: 1;
       .sample-pack-backdrop {
+        width: 170px;
+       
         .sample-pack-container {
           height: 240px;
           width: 170px;
-          margin: 10px 1px;
+          margin: 10px;
           border-radius: 3px;
           font-family: "Roboto", sans-serif;
-          box-shadow: rgba(0, 0, 0, 0.075) 4px 4px 7px;
+          box-shadow: rgba(0, 0, 0, 0.014) 4px 4px 7px;
           @include flex(column, space-evenly);
-          background-color: rgba(233, 233, 233, 0.363);
+          background-color: rgb(236, 236, 236);
           &:hover {
             background-color: rgba(233, 233, 233, 0.602);
           }
@@ -107,7 +119,7 @@ $mobile-width: 415px;
             align-items: center;
             justify-content: center;
             .sample-pack-img {
-              width: 7vw;
+              width: 120px;
               height: 12vh;
               border-radius: 4px;
               margin: auto;
@@ -137,7 +149,7 @@ $mobile-width: 415px;
     }
 
     .sample-pack-carousel-two {
-      width: 85%;
+      width: 700px;
       z-index: 1;
       height: 300px;
       margin: 60px auto;
@@ -151,9 +163,9 @@ $mobile-width: 415px;
           width: 170px;
           margin: 10px 10px;
           border-radius: 3px;
-          box-shadow: rgba(0, 0, 0, 0.075) 4px 4px 7px;
+          box-shadow: rgba(0, 0, 0, 0.014z) 4px 4px 7px;
           @include flex(column, space-evenly);
-          background-color: rgba(233, 233, 233, 0.363);
+          background-color: rgb(236, 236, 236);
           &:hover {
             background-color: rgba(233, 233, 233, 0.602);
           }
@@ -164,7 +176,7 @@ $mobile-width: 415px;
             align-items: center;
             justify-content: center;
             .sample-pack-img {
-              width: 7vw;
+              width: 120px;
               height: 12vh;
               border-radius: 4px;
               margin: auto;
@@ -224,6 +236,9 @@ $mobile-width: 415px;
     width: 30%;
     @include mobile() {
       width: 100%;
+    }
+    @include break2(){
+      display: none;
     }
     .recent-packs-title {
       @include mobile() {

@@ -14,6 +14,7 @@ function Sample(props) {
           className="audioPlayer"
           controls={true}
           width={50}
+          playIcon={true}
           height={30}
           url={url}
         />

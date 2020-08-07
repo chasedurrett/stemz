@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./SamplePackDashboard.css";
 import axios from "axios";
 import { connect } from "react-redux";
@@ -7,27 +7,26 @@ import Carousel from "./Carousel/Carousel";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { func } from "prop-types";
 
-class SamplePackDashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      samplePacks: [],
-    };
-  }
+function SamplePackDashboard() {
 
-  componentDidMount() {
-    this.getSamplePacks();
-  }
+  const [samplePacks, setSamplePacks] = useState([])
 
-  getSamplePacks() {
+  useEffect(() => {
+    getSamplePacks()
+  })
+
+  function getSamplePacks() {
     axios
       .get("/api/samplepacks")
-      .then((res) => this.setState({ samplePacks: res.data }))
+      .then((res) =>  setSamplePacks(res.data))
       .catch((err) => console.log(err));
   }
 
-  render() {
+ 
+    const break1 = useMediaQuery('max-width: 1830px');
     const settings = {
       infinite: true,
       speed: 300,
@@ -39,7 +38,18 @@ class SamplePackDashboard extends Component {
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
     };
-    const { samplePacks } = this.state;
+    const settingsBreak1 = {
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      arrows: true,
+      slidesToScroll: 1,
+      className: "slides",
+      cssEase: "linear",
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+    }
+   
     const samplePacksDisplay = samplePacks.map((e) => (
       <div className="sample-pack-backdrop" key={e.id}>
         <div className="sample-pack-container">
@@ -113,7 +123,7 @@ class SamplePackDashboard extends Component {
         <div className="content-display">
           <div className="sample-pack-carousel">
             <h3 className="row-title">All Packs</h3>
-            <Slider {...settings}>{samplePacksDisplay}</Slider>
+            {break1 ? <Slider {...settingsBreak1}>{samplePacksDisplay}</Slider> : <Slider {...settings}>{samplePacksDisplay}</Slider>}
           </div>
           <div className="sample-pack-carousel-two">
             <h3 className="row-title">Lofi</h3>
@@ -153,7 +163,7 @@ class SamplePackDashboard extends Component {
         </footer>
       </div>
     );
-  }
+  
 }
 
 export default SamplePackDashboard;

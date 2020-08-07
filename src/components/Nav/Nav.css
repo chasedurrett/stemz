@@ -10,7 +10,8 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 9vw;
+  width: 120px;
+  min-width: 120px;
   height: 100%;
   top: 6vh;
   text-align: left;
